@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerPrincipal_membros">
+    <children>
+        <Button layoutX="43.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#OpenView_membros" prefHeight="25.0" prefWidth="77.0" scaleX="2.0" scaleY="2.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Inspecionar" textFill="WHITE" />
+        <Button layoutX="43.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#OpenAdd_membros" prefHeight="25.0" prefWidth="77.0" scaleX="2.0" scaleY="2.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Adicionar" textFill="WHITE" />
+        <Button layoutX="43.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#OpenRemove_membros" prefHeight="25.0" prefWidth="77.0" scaleX="2.0" scaleY="2.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Remover" textFill="WHITE" />
+        <Button layoutX="43.0" layoutY="274.0" mnemonicParsing="false" onMouseClicked="#OpenChange_membros" prefHeight="25.0" prefWidth="77.0" scaleX="2.0" scaleY="2.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Modificar" textFill="WHITE" />
+        <TableView fx:id="tabela_membros" layoutX="189.0" layoutY="4.0" prefHeight="575.0" prefWidth="294.0">
+            <columns>
+                <TableColumn fx:id="colNome" prefWidth="75.0" text="Nome" />
+                <TableColumn fx:id="colCPF" prefWidth="75.0" text="CPF" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+      <Pane fx:id="add_membros" layoutX="551.0" layoutY="14.0" prefHeight="575.0" prefWidth="438.0" visible="false">
+         <children>
+            <Button layoutX="85.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#save" prefWidth="52.0" scaleX="2.0" scaleY="2.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Save" textFill="WHITE" />
+            <Button layoutX="302.0" layoutY="526.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Cancel" textFill="WHITE" />
+            <TextField fx:id="nomeField" layoutX="35.0" layoutY="42.0" />
+            <Text layoutX="35.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Membro" />
+            <TextField fx:id="rgField" layoutX="35.0" layoutY="95.0" />
+            <Text layoutX="254.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF" />
+            <TextField fx:id="cpfField" layoutX="254.0" layoutY="42.0" />
+            <Text layoutX="35.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RG" />
+            <TextField fx:id="oeField" layoutX="254.0" layoutY="95.0" />
+            <Text layoutX="253.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orgão Expeditor" />
+            <TextField fx:id="nacField" layoutX="35.0" layoutY="148.0" />
+            <Text layoutX="35.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nacionalidade" />
+            <TextField fx:id="proField" layoutX="253.0" layoutY="148.0" />
+            <Text layoutX="253.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profissão" />
+            <TextField fx:id="endField" layoutX="35.0" layoutY="199.0" prefHeight="25.0" prefWidth="367.0" />
+            <Text layoutX="35.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" />
+            <TextField fx:id="cepField" layoutX="35.0" layoutY="251.0" />
+            <Text layoutX="35.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP" />
+            <DatePicker fx:id="dateField" editable="false" layoutX="35.0" layoutY="302.0" />
+            <Text layoutX="35.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Entrada" />
+            <Text layoutX="35.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado Civil" />
+            <ChoiceBox fx:id="estadoField" layoutX="35.0" layoutY="360.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="change_membros" layoutX="551.0" layoutY="14.0" prefHeight="575.0" prefWidth="438.0" visible="false">
+         <children>
+            <Button layoutX="193.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#search" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Pesquisar" textFill="WHITE" />
+            <ChoiceBox fx:id="estadoField1" disable="true" layoutX="35.0" layoutY="415.0" prefWidth="150.0" />
+            <Text layoutX="35.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado Civil" />
+            <Text layoutX="35.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Entrada" />
+            <DatePicker fx:id="dateField1" disable="true" layoutX="35.0" layoutY="356.0" />
+            <Text layoutX="35.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP" />
+            <TextField fx:id="cepField1" disable="true" layoutX="35.0" layoutY="305.0" />
+            <Text layoutX="35.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" />
+            <TextField fx:id="endField1" disable="true" layoutX="35.0" layoutY="253.0" prefHeight="25.0" prefWidth="367.0" />
+            <Text layoutX="253.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profissão" />
+            <TextField fx:id="proField1" disable="true" layoutX="253.0" layoutY="202.0" />
+            <Text layoutX="35.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nacionalidade" />
+            <TextField fx:id="nacField1" disable="true" layoutX="35.0" layoutY="202.0" />
+            <Text layoutX="253.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orgão Expeditor" />
+            <TextField fx:id="oeField1" disable="true" layoutX="254.0" layoutY="149.0" />
+            <Text layoutX="35.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RG" />
+            <TextField fx:id="cpfField1" layoutX="35.0" layoutY="21.0" />
+            <Text layoutX="35.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF" />
+            <TextField fx:id="rgField1" disable="true" layoutX="35.0" layoutY="149.0" />
+            <Text layoutX="35.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Membro" />
+            <TextField fx:id="nomeField1" disable="true" layoutX="35.0" layoutY="96.0" />
+            <Button layoutX="302.0" layoutY="526.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Cancel" textFill="WHITE" />
+            <Button layoutX="85.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#alterar" prefWidth="52.0" scaleX="2.0" scaleY="2.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Alterar" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane fx:id="delete_membros" layoutX="551.0" layoutY="14.0" prefHeight="575.0" prefWidth="438.0" visible="false">
+         <children>
+            <Text layoutX="68.0" layoutY="44.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:" />
+            <Button layoutX="302.0" layoutY="526.0" mnemonicParsing="false" prefWidth="59.0" scaleX="2.0" scaleY="2.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Cancel" textFill="WHITE" />
+            <Button layoutX="85.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#delete" scaleX="2.0" scaleY="2.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Remove" textFill="WHITE" />
+            <TextField fx:id="cpfField3" layoutX="93.0" layoutY="63.0" scaleX="1.5" scaleY="1.5" />
+         </children>
+      </Pane>
+      <Pane fx:id="view_membros" layoutX="551.0" layoutY="14.0" prefHeight="575.0" prefWidth="438.0" visible="false">
+         <children>
+            <Button layoutX="62.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#searchview" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Search" textFill="WHITE" />
+            <TableView fx:id="tabela_projM" layoutX="13.0" layoutY="100.0" prefHeight="359.0" prefWidth="174.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="67.0" text="Id" />
+                  <TableColumn fx:id="colProj" prefWidth="105.0" text="Nome Projeto" />
+               </columns>
+            </TableView>
+            <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF" />
+            <TextField fx:id="cpfField2" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="174.0" />
+            <Text layoutX="201.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado Civil" />
+            <Text layoutX="202.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Entrada" />
+            <Text layoutX="201.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP" />
+            <TextField fx:id="cepField2" editable="false" layoutX="201.0" layoutY="336.0" prefHeight="25.0" prefWidth="223.0" />
+            <Text layoutX="201.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" />
+            <TextField fx:id="endField2" editable="false" layoutX="201.0" layoutY="283.0" prefHeight="25.0" prefWidth="223.0" />
+            <Text layoutX="202.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profissão" />
+            <TextField fx:id="proField2" editable="false" layoutX="202.0" layoutY="187.0" prefHeight="25.0" prefWidth="223.0" />
+            <Text layoutX="201.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nacionalidade" />
+            <TextField fx:id="nacField2" editable="false" layoutX="201.0" layoutY="235.0" prefHeight="25.0" prefWidth="223.0" />
+            <Text layoutX="202.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orgão Expeditor" />
+            <TextField fx:id="oeField2" editable="false" layoutX="203.0" layoutY="137.0" prefHeight="25.0" prefWidth="223.0" />
+            <Text layoutX="201.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RG" />
+            <TextField fx:id="rgField2" editable="false" layoutX="201.0" layoutY="84.0" prefHeight="25.0" prefWidth="223.0" />
+            <Text layoutX="201.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Membro" />
+            <TextField fx:id="nomeField2" editable="false" layoutX="201.0" layoutY="31.0" prefHeight="25.0" prefWidth="223.0" />
+            <TextField fx:id="dateField2" editable="false" layoutX="201.0" layoutY="387.0" prefHeight="25.0" prefWidth="223.0" />
+            <TextField fx:id="estadoField2" editable="false" layoutX="201.0" layoutY="434.0" prefHeight="25.0" prefWidth="223.0" />
+         </children>
+      </Pane>
+      <Separator layoutX="514.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0" />
+    </children>
+</AnchorPane>

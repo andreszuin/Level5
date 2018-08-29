@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerPrincipal">
+   <children>
+      <Button layoutX="500.0" layoutY="196.0" mnemonicParsing="false" onMouseClicked="#OpenPrincipal_membros" prefHeight="27.0" prefWidth="67.0" scaleX="4.0" scaleY="4.0" style="-fx-background-radius: 0; -fx-background-color: #013686; -fx-border-color: white; -fx-border-width: 0;" text="Membros" textFill="WHITE" />
+      <Button layoutX="500.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#OpenPrincipal_gold" prefHeight="25.0" prefWidth="67.0" scaleX="4.0" scaleY="4.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Gold" textFill="WHITE" />
+      <Button contentDisplay="CENTER" layoutX="500.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#OpenPrincipal_proj" prefHeight="25.0" prefWidth="67.0" scaleX="4.0" scaleY="4.0" style="-fx-background-radius: 0; -fx-background-color: #013686;" text="Projetos" textFill="#fcfcfc" />
+      <ImageView fitHeight="263.0" fitWidth="286.0" layoutX="23.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

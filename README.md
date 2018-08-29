@@ -7,4 +7,6 @@
 
 -A pasta de modelo contem as classes que realizam o armazenamento temporário de dados e os transfere para um banco de dados
 
+-A pasta teste possui a classe que realiza a conexão com o banco de dados e a classe main
+
 -Banco de dados utilizado no projeto não presente no github
